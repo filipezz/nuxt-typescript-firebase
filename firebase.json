@@ -1,0 +1,34 @@
+{
+  "functions": {
+    "source": "functions",
+    "predeploy": [
+      "npm --prefix src run build",
+      "rimraf -rf functions/src/nuxt",
+      "cp -r src/.nuxt/ functions/lib/nuxt/",
+      "cp src/nuxt.config.js functions/src",
+      "cp src/nuxt.config.js functions/lib",
+      "npm --prefix functions run build"
+    ]
+  },
+  "hosting": {
+    "predeploy": [
+      "rimraf -rf public/* && mkdir  public/_nuxt && cp -a src/.nuxt/dist/client/. public/_nuxt && cp -a src/static/. public/ && cp -a public_base/. public/"
+    ],
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "src/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "ssrapp"
+      },
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ]
+  }
+}

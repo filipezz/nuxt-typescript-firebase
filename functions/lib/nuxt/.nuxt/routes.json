@@ -1,0 +1,14 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "C:\\\\Users\\\\filip\\\\Desktop\\\\JS\\\\nuxt-firebase\\\\src\\\\pages\\\\inspire.vue",
+    "chunkName": "pages/inspire"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\filip\\\\Desktop\\\\JS\\\\nuxt-firebase\\\\src\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
